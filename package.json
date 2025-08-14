@@ -7,12 +7,17 @@
     "ios": "react-native run-ios",
     "lint": "eslint .",
     "start": "react-native start",
-    "test": "jest"
+    "test": "jest",
+    "deep-clean": "npm cache verify && npm run ios:clean && npm i && npm run ios:podinstall && npm run android:clean",
+    "ios:clean": "cd ios && pod deintegrate  && rm -rf Pods Podfile.lock && cd ..",
+    "ios:podinstall": "cd ios && pod install --repo-update && cd ..",
+    "android:clean": "cd android && rm -rf app/.cxx && rm -rf app/.gradle && rm -rf app/build && cd .."
   },
   "dependencies": {
+    "@allisonadam81/react-native-super-clusters": "^0.0.1",
+    "@react-native/new-app-screen": "0.80.2",
     "react": "19.1.0",
-    "react-native": "0.80.2",
-    "@react-native/new-app-screen": "0.80.2"
+    "react-native": "0.80.2"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
@@ -31,9 +36,9 @@
     "eslint": "^8.19.0",
     "jest": "^29.6.3",
     "prettier": "2.8.8",
-    "react-test-renderer": "19.1.0",
-    "react-native-maps": "1.25.3",
     "react-native-map-clustering": "4.0.0",
+    "react-native-maps": "1.25.3",
+    "react-test-renderer": "19.1.0",
     "typescript": "5.0.4"
   },
   "engines": {

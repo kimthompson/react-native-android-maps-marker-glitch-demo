@@ -8,6 +8,8 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import MapView from 'react-native-map-clustering';
+// import MapView from '@allisonadam81/react-native-super-clusters';
+// import MapView, { Marker } from 'react-native-maps';
 import { Marker } from 'react-native-maps';
 
 function getRandomLatitude(min = 40, max = 48) {
